@@ -1,0 +1,56 @@
+{
+  "name":"run-ps1-command",
+  "displayName":"Run PowerShell Command",
+  "version":"1.1.0",
+  "publisher": "Solorzano-JuanJose",
+  "engines":{"vscode":"^1.80.0"},
+  "categories": ["Other"],
+  "main":"./src/extension.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JuanJoseSolorzano/"
+  },
+  "contributes":{
+    "configuration":{
+      "type":"object",
+      "title": "Run PowerShell Command Settings",
+      "properties": {
+        "RunPs1Command.scripts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": { "type": "string" },
+              "command": { "type": "string" },
+              "terminal": { "type": "boolean" }
+            },
+            "required": ["label", "command","terminal"]
+            },
+            "default": [{
+              "label": "Example Script",
+              "command": "C:\\Scripts\\example.ps1",
+              "terminal":true
+            }
+          ]
+        }
+      }
+    },
+    "menus": {
+      "explorer/context": [
+        {
+          "command":"extension.RunPs1Command",
+          "when": "resourceLangId != ''",
+          "group": "navigation"
+        }
+      ]
+    },
+    "commands":[
+      {
+        "command":"extension.RunPs1Command",
+        "title":"RunPs1Command"
+     }
+    ]
+  },
+  "script":{},
+  "devDependencies":{}
+}
