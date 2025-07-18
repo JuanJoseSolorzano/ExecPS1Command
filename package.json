@@ -1,7 +1,7 @@
 {
   "name":"run-ps1-command",
   "displayName":"Run PowerShell Command",
-  "version":"1.1.0",
+  "version":"1.1.1",
   "publisher": "Solorzano-JuanJose",
   "icon": "images/icon.png",
   "engines":{"vscode":"^1.80.0"},
