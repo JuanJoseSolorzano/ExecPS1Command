@@ -1,74 +1,69 @@
-# Run PowerShell Command VS Code Extension
+# ⚡ Run PowerShell Command VS Code Extension
 
-![Extension Icon](images/icon.png)
+![Extension Icon](images/icon.png)  
+[![VS Code Marketplace](https://img.shields.io/visual-studio-marketplace/v/JuanJoseSolorzano.execps1command?logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=JuanJoseSolorzano.execps1command)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-## Overview
+## 🌟 Overview
 
-**Run PowerShell Command** is a Visual Studio Code extension that lets you easily execute PowerShell scripts directly from the VS Code interface. Configure your favorite scripts and run them with a single click from the Explorer context menu.
-
----
-
-## Features
-
-- **Quick Script Execution:** Run any PowerShell script from VS Code.
-- **Custom Script List:** Configure multiple scripts with labels and options.
-- **Terminal or Background:** Choose to run scripts in a terminal or silently in the background.
-- **Explorer Context Menu:** Access your scripts from the right-click menu in the Explorer.
+**Run PowerShell Command** supercharges your VS Code workflow with lightning-fast PowerShell script execution! Configure your favorite scripts and run them with a single click directly from the Explorer context menu.
 
 ---
 
-## Getting Started
+## 🚀 Key Features
 
-### Installation
+| Feature | Icon | Description |
+|---------|------|-------------|
+| **Quick Execution** | ⚡ | Run PowerShell scripts instantly from VS Code |
+| **Custom Script Library** | 📚 | Save and organize multiple scripts with custom labels |
+| **Flexible Run Options** | 🖥️ | Choose terminal visibility or background execution |
+| **Explorer Integration** | 📁 | Access scripts via right-click context menu |
+| **Smart Notifications** | 💬 | Get execution status alerts with success/failure indicators |
 
-1. Download the latest `.vsix` file from the [Releases](https://github.com/JuanJoseSolorzano/ExecPS1Command/releases).
-2. In VS Code, press `Ctrl+Shift+P` and select `Extensions: Install from VSIX...`.
-3. Choose the downloaded file to install.
+---
 
-### Configuration
+## 🛠️ Getting Started
 
-Add your scripts to the extension settings:
+### 📥 Installation
+1. Download the latest `.vsix` from [Releases](https://github.com/JuanJoseSolorzano/ExecPS1Command/releases)
+2. In VS Code:  
+   `Ctrl+Shift+P` → `Extensions: Install from VSIX...` → Select downloaded file
+
+### 🛒 Install from Extension Marketplace
+
+1. 🔍 Open the Extensions view (`Ctrl+Shift+X`)
+2. 📝 Search for **JuanJose** and select **Run PowerShell Command**
+3. ⬇️ Click **Install**
+
+### 🚀 How to use it
+
+1. `Right-Click` on the file explorer:
+![How to use it](images/how_to_use.png)
+
+2. `From command palet:`
+![How to use it 1](images/how_to_use_1.png)
+
+3. `See the PS1 script output in the VSCODE terminal`
+![How to use it 2](images/how_to_use_2.png)
+
+### ⚙️ Configuration
+Add your scripts to VS Code settings (`settings.json`):
 
 ```json
 {
   "RunPs1Command.scripts": [
     {
-      "label": "Example Script",
-      "command": "C:\\Scripts\\example.ps1",
+      "label": "Update Modules",
+      "command": "C:\\Scripts\\update.ps1",
       "terminal": true
+    },
+    {
+      "label": "Clean Temp Files",
+      "command": "D:\\Utils\\cleanup.ps1",
+      "terminal": false
     }
   ]
 }
 ```
-
-- **label:** Name shown in the menu.
-- **command:** Full path to your `.ps1` script.
-- **terminal:** `true` to run in a terminal, `false` to run in the background.
-
----
-
-## Usage
-
-1. Right-click any file or folder in the Explorer.
-2. Select `RunPs1Command`.
-3. Pick your script from the list.
-4. View output in the terminal or as a notification.
-
----
-
-## License
-
-This project is licensed under the MIT License. See [LICENCE](LICENCE) for details.
-
----
-
-## Contributing
-
-Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
-
----
-
-## Links
-
-- [GitHub Repository](https://github.com/JuanJoseSolorzano/ExecPS1Command)
-- [Report Issues](https://github.com/JuanJoseSolorzano/ExecPS1Command/issues)
+> **Tip:**  
+> `terminal = true` will display the script's output in the VS Code integrated terminal; otherwise, a PowerShell terminal will pop up.
